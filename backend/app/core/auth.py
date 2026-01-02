@@ -53,5 +53,7 @@ async def get_current_user(request:Request)->AuthUser:
 
     if not request_state.is_signed_in:
         raise HTTPException(
-            status_code=status.HTTP_401_UNA
+            status_code=status.HTTP_401_UNAUTHORIZED,details="Not authorized"
+
         )
+    
